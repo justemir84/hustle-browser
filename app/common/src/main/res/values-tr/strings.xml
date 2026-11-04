@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="username">Kullanıcı adı</string>
+    <string name="password">Parola</string>
+    <string name="connection_isnt_secure">Bağlantı güvenli değil</string>
+    <string name="back_to_safety">Güvenli yere geri dön</string>
+    <string name="hostname">Ana bilgisayar adı</string>
+    <string name="details">Ayrıntılar</string>
+    <string name="error_page_insecure_message">Saldırganlar bu siteden bilgilerinizi çalmaya çalışıyor olabilir</string>
+    <string name="error_page_error_code">Hata kodu</string>
+    <string name="error_page_try_again">Tekrar dene</string>
+    <string name="error_page_reload">Yenile</string>
+    <string name="error_page_back">Geri</string>
+    <string name="error_page_dangerous_title">Tehlikeli site</string>
+    <string name="error_page_dangerous_message">Bu site tehlikeli olarak bildirildi: bilgilerinizi çalmayı veya aygıtınıza zarar vermeyi deneyebilir</string>
+    <string name="error_page_crashed_title">Bu sayfa çöktü</string>
+    <string name="error_page_crashed_message">Sayfa belleği tükenmiş olabilir. Tekrar denemek için sayfayı yenileyin</string>
+    <string name="error_page_network_title">Bu siteye ulaşılamıyor</string>
+    <string name="error_page_network_message">Ağ bağlantısını kontrol edip tekrar deneyin</string>
+    <string name="error_page_generic_title">Bu sayfa açılamıyor</string>
+    <string name="error_page_generic_message">Bu sayfa yüklenirken bir sorun oluştu</string>
+</resources>
