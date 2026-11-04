@@ -1,0 +1,3 @@
+﻿* Hustle Browser rebranding (new name, icon, texts)
+* Turkish UI translation
+* Auto-update feed and release infrastructure fixes
