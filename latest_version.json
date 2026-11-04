@@ -13,17 +13,17 @@
     },
     {
       "name": "beta",
-      "latestVersionName": "v3.0.3",
-      "latestVersionCode": 81,
+      "latestVersionName": "v3.0.4",
+      "latestVersionCode": 82,
       "minAPI": 24,
-      "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.0.3/hustle-browser-3.0.3-generic-geckoExcluded.apk",
+      "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.0.4/tvbro-3.0.4-genericGeckoExcluded.apk",
       "variants": {
         "geckoIncluded": {
           "minAPI": 26,
-          "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.0.3/hustle-browser-3.0.3-generic-geckoIncluded-armeabi-v7a.apk",
+          "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.0.4/tvbro-3.0.4-genericGeckoIncluded-armeabi-v7a.apk",
           "urls": [
-            "https://github.com/justemir84/hustle-browser/releases/download/v3.0.3/hustle-browser-3.0.3-generic-geckoIncluded-arm64-v8a.apk",
-            "https://github.com/justemir84/hustle-browser/releases/download/v3.0.3/hustle-browser-3.0.3-generic-geckoIncluded-x86_64.apk"
+            "https://github.com/justemir84/hustle-browser/releases/download/v3.0.4/tvbro-3.0.4-genericGeckoIncluded-arm64-v8a.apk",
+            "https://github.com/justemir84/hustle-browser/releases/download/v3.0.4/tvbro-3.0.4-genericGeckoIncluded-x86_64.apk"
           ]
         }
       }
@@ -31,6 +31,11 @@
   ],
 
   "changelog": [
+    {
+      "versionCode": 82,
+      "versionName": "v3.0.4",
+      "changes": "* Restore full source tree (app/, gradle wrapper, buildSrc, adblock) and make CI builds work"
+    },
     {
       "versionCode": 81,
       "versionName": "v3.0.3",
