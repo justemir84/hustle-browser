@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hustle Browser - APK launcher simgesi (vektörel drawable) -->
+<!-- Tüm mipmap boyutları (mdpi..xxxhdpi) bu vektörden otomatik üretilir. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+    <!-- Arka plan -->
+    <path android:fillColor="#121212" android:pathData="M0,0h512v512H0z"/>
+    <!-- Dış kenar çerçevesi -->
+    <path android:fillColor="#2A2A2A" android:pathData="M24,24h464v464H24z"/>
+    <!-- Çerçeve içi boşluk -->
+    <path android:fillColor="#121212" android:pathData="M40,40h432v432H40z"/>
+    <!-- Tarayıcı penceresi -->
+    <path android:fillColor="#1A1A1A" android:pathData="M64,64h384v384H64z"/>
+    <!-- Adres çubuğu -->
+    <path android:fillColor="#252525" android:pathData="M112,116h288v60H112z"/>
+    <!-- Adres çubuğu noktaları -->
+    <path android:fillColor="#FF6B00" android:pathData="M152,146A8,8 0,1 1,136,146A8,8 0,1 1,152,146"/>
+    <path android:fillColor="#666666" android:pathData="M176,146A6,6 0,1 1,164,146A6,6 0,1 1,176,146"/>
+    <path android:fillColor="#666666" android:pathData="M200,146A6,6 0,1 1,188,146A6,6 0,1 1,200,146"/>
+    <!-- H harfi (Hustle) -->
+    <path android:fillColor="#FF6B00" android:pathData="M214,250L214,362L252,362L252,306L286,306L286,362L324,362L324,250Z"/>
+    <!-- Hız / sekme çizgisi (altta) -->
+    <path android:fillColor="#FF6B00" android:pathData="M96,430L180,430L210,450L22,450Z"/>
+</vector>

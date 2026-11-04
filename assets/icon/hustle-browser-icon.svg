@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hustle Browser - APK Uygulama Simgesi (kaynak SVG) -->
+<!-- Android mipmap için istenen boyutta PNG/webP'ye dönüştürülür: 48, 72, 96, 144, 192 px -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#E53935"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Arka plan kare (yuvarlatılmış) -->
+  <rect width="512" height="512" rx="112" fill="#121212"/>
+
+  <!-- Kenar çerçeve -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#333333" stroke-width="8"/>
+
+  <!-- Tarayıcı penceresi -->
+  <rect x="56" y="56" width="400" height="400" rx="72" fill="#1A1A1A"/>
+
+  <!-- Adres çubuğu -->
+  <rect x="96" y="100" width="320" height="64" rx="32" fill="#252525"/>
+  <circle cx="124" cy="132" r="8" fill="#FF6B00"/>
+  <circle cx="148" cy="132" r="6" fill="#666666"/>
+  <circle cx="168" cy="132" r="6" fill="#666666"/>
+
+  <!-- H harfi (orta) -->
+  <path d="M 214 250 L 214 362 L 252 362 L 252 306 L 286 306 L 286 362 L 324 362 L 324 250 Z" fill="url(#iconGrad)" filter="url(#softShadow)"/>
+
+  <!-- Hız / sekme çizgisi (altta) -->
+  <path d="M 96 430 L 180 430 L 210 450 L 22 450 Z" fill="#FF6B00" opacity="0.95"/>
+</svg>

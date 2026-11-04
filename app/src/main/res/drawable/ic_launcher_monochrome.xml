@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hustle Browser - adaptive icon monochrome layer (themed icons, Android 13+) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+    <!-- the orange "H" silhouette, drawn white; the system tints it to the wallpaper accent -->
+    <path android:fillColor="#FFFFFF" android:pathData="M214,250L214,362L252,362L252,306L286,306L286,362L324,362L324,250Z"/>
+</vector>
