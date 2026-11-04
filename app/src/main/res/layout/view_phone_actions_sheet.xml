@@ -63,7 +63,7 @@
     </LinearLayout>
 
     <View
-        style="@style/Widget.TVBro.MenuSeparator"
+        style="@style/Widget.HustleBrowser.MenuSeparator"
         android:id="@+id/vHeaderSeparator" />
 
     <LinearLayout

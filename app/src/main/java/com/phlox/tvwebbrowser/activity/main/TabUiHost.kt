@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.dialogs.favorites.FavoriteEditorDialog
 import com.phlox.tvwebbrowser.browser.BrowserController
 import com.phlox.tvwebbrowser.model.BrowserTab
@@ -147,7 +147,7 @@ class TabUiHost(
         activity.lifecycleScope.launch {
             val bookmark = controller.homePageLinks.links.value.firstOrNull { it.order == index }
             var favoriteItem: FavoriteItem? = bookmark?.favoriteId?.let {
-                TVBro.container.data.favorites.get(it)
+                HustleBrowser.container.data.favorites.get(it)
             }
 
             if (favoriteItem == null) {

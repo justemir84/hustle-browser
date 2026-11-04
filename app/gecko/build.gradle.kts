@@ -1,7 +1,7 @@
 import java.util.zip.CRC32
 
 plugins {
-    id("tvbro.android.library")
+    id("hustlebrowser.android.library")
 }
 
 /** The built-in home page of the app; GeckoView shows it as a page of the extension */

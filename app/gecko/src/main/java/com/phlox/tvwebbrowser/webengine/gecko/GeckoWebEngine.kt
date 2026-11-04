@@ -119,7 +119,7 @@ class GeckoWebEngine(val tab: BrowserTab): WebEngine, VirtualCursorSupport, Site
                     Log.d(TAG, "appWebExtension already installed")
                     runtime.webExtensionController.ensureBuiltIn(
                         "resource://android/assets/extensions/generic/",
-                        "tvbro@mock.com"
+                        "hustlebrowser@mock.com"
                     )
                 } else {
                     Log.d(TAG, "installing appWebExtension")
@@ -153,7 +153,7 @@ class GeckoWebEngine(val tab: BrowserTab): WebEngine, VirtualCursorSupport, Site
                     Log.d(TAG, "background script connected")
                     port.setDelegate(AppWebExtensionBackgroundPortDelegate(port))
                 }
-            }, "tvbro_bg")
+            }, "hustlebrowser_bg")
         }
 
         /**
@@ -435,7 +435,7 @@ class GeckoWebEngine(val tab: BrowserTab): WebEngine, VirtualCursorSupport, Site
                         port.setDelegate(it)
                     }
                 }
-            }, "tvbro_content"
+            }, "hustlebrowser_content"
         )
         session.webExtensionController.setMessageDelegate(extension,
             object : MessageDelegate {
@@ -451,7 +451,7 @@ class GeckoWebEngine(val tab: BrowserTab): WebEngine, VirtualCursorSupport, Site
                         port.setDelegate(it)
                     }
                 }
-            }, "tvbro")
+            }, "hustlebrowser")
     }
 
     override fun getWebEngineName(): String = ENGINE_NAME

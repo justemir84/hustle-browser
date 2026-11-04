@@ -1,5 +1,5 @@
 plugins {
-    id("tvbro.android.application")
+    id("hustlebrowser.android.application")
     alias(libs.plugins.ksp)
 }
 
@@ -67,7 +67,7 @@ android {
             buildConfigField("Boolean", "BUILT_IN_AUTO_UPDATE", "false")
         }
 
-        // each variant has one web engine, registered by TVBro.initWebEngineStuff()
+        // each variant has one web engine, registered by HustleBrowser.initWebEngineStuff()
         create("geckoIncluded") {
             dimension = "webengine"
             // a separate app: it can be installed next to the WebView one

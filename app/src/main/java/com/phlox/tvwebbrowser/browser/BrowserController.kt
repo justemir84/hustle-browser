@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.HomePageLink
 import com.phlox.tvwebbrowser.model.HostConfig
 import com.phlox.tvwebbrowser.model.BrowserTab
@@ -92,9 +92,9 @@ class BrowserController : ActiveModel() {
     private val config = AppContext.provideConfig()
     private var incognitoMode = config.incognitoMode
     //all tabs writes go through this queue: they are not cancelled with the model and do not overlap
-    private val writes = TVBro.container.tabWrites
-    private val tabFiles = TVBro.container.tabFiles
-    private val data = TVBro.container.data
+    private val writes = HustleBrowser.container.tabWrites
+    private val tabFiles = HustleBrowser.container.tabFiles
+    private val data = HustleBrowser.container.data
     private val hostConfigs = data.hostConfigs
     val homePageLinks = HomePageLinks(config, data.history, data.favorites)
     private val historyLogger = VisitedHistoryLogger(modelScope, data.history)
@@ -139,7 +139,7 @@ class BrowserController : ActiveModel() {
         //engines ask for them synchronously as soon as pages start loading
         hostConfigs.loadSiteSettings()
         //the ad blocking engine of its file (a build from the lists goes on in the background)
-        TVBro.container.adBlock.awaitLoaded(AD_BLOCK_LOAD_TIMEOUT_MS)
+        HustleBrowser.container.adBlock.awaitLoaded(AD_BLOCK_LOAD_TIMEOUT_MS)
         //tabs of the previous activity instance may be still saving
         writes.awaitPending()
         tabsStates.replaceAll(data.tabs.load(config.incognitoMode).map(BrowserTab::fromEntity))
@@ -478,7 +478,7 @@ class BrowserController : ActiveModel() {
         val setting = if (enabled == config.adBlockEnabled) null else enabled
         //the in-memory setting changes right away (the scope dispatches immediately on the main thread),
         //the write is not cancelled with the model
-        val write = TVBro.container.appScope.launch { hostConfigs.setAdBlock(host, setting) }
+        val write = HustleBrowser.container.appScope.launch { hostConfigs.setAdBlock(host, setting) }
         if (tab.isWebEngineCreated && tab == currentTab.value) {
             tab.webEngine.reload()
         }
@@ -520,7 +520,7 @@ class BrowserController : ActiveModel() {
         val host = hostNameOf(tab) ?: return null
         val setting = if (desktop == defaultDesktopView) null else desktop
         //the in-memory setting changes right away, the write is not cancelled with the model
-        val write = TVBro.container.appScope.launch { hostConfigs.setDesktopView(host, setting) }
+        val write = HustleBrowser.container.appScope.launch { hostConfigs.setDesktopView(host, setting) }
         if (applySiteView(tab) && tab == currentTab.value) {
             tab.webEngine.reload()
         }

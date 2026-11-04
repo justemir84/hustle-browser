@@ -33,7 +33,7 @@ import androidx.lifecycle.lifecycleScope
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.channels.HomeChannels
 import com.phlox.tvwebbrowser.activity.IncognitoModeMainActivity
 import com.phlox.tvwebbrowser.browser.BrowserCommands
@@ -267,7 +267,7 @@ open class MainActivity : AppCompatActivity(), BrowserShell.Host {
             downloadLauncher.downloadAgain(item, engine?.userAgentString, engine?.getCookies(item.url))
         }
 
-        override suspend fun remove(ids: List<Long>) = TVBro.container.data.downloads.delete(ids)
+        override suspend fun remove(ids: List<Long>) = HustleBrowser.container.data.downloads.delete(ids)
 
         override fun onScreenShown(shown: Boolean) = downloadLauncher.onScreenShown(shown)
     }
@@ -573,7 +573,7 @@ open class MainActivity : AppCompatActivity(), BrowserShell.Host {
         super.onStop()
         downloadLauncher.onActivityStopped()
         //the home screen shows now: its channels get what changed (the tabs once their files are written)
-        val container = TVBro.container
+        val container = HustleBrowser.container
         container.appScope.launch {
             container.tabWrites.awaitPending()
             HomeChannels.sync(applicationContext)
@@ -643,9 +643,9 @@ open class MainActivity : AppCompatActivity(), BrowserShell.Host {
         Log.d(TAG, "switchProcess incognitoMode: $incognitoMode")
         val app = applicationContext
         val intent = switchProcessIntent(app, incognitoMode, intentToForward, Process.myPid())
-        TVBro.container.appScope.launch {
+        HustleBrowser.container.appScope.launch {
             //tabs state saved on activity pause should not be lost
-            TVBro.container.tabWrites.awaitPending()
+            HustleBrowser.container.tabWrites.awaitPending()
             app.startActivity(intent)
             exitProcess(0)
         }

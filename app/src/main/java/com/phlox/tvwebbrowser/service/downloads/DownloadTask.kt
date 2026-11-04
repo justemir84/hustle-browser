@@ -8,7 +8,7 @@ import android.os.ParcelFileDescriptor
 import android.provider.MediaStore
 import android.util.Log
 import com.phlox.tvwebbrowser.AppContext
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.Download
 import com.phlox.tvwebbrowser.net.ProxySettings
 import com.phlox.tvwebbrowser.utils.DownloadFileActions
@@ -67,7 +67,7 @@ abstract class DownloadTask(val download: Download, private val listener: Listen
         if (stopRequest == Stop.NONE) stopRequest = reason
     }
 
-    private val repository get() = TVBro.container.data.downloads
+    private val repository get() = HustleBrowser.container.data.downloads
 
     /** Opens the input, filling what the response tells about the file (its size, name, type) */
     protected abstract fun openInput(): InputStream

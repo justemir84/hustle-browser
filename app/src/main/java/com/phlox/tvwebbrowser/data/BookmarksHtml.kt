@@ -4,7 +4,7 @@ package com.phlox.tvwebbrowser.data
  * The HTML bookmarks file (NETSCAPE-Bookmark-file-1) that Chrome, Firefox and Edge import and export: a
  * folder is an H3 heading followed by a DL list of what is in it, a bookmark is an A link in a DT item.
  *
- * The Home page folder of TV Bro is marked with the [HOME_PAGE_ATTRIBUTE] of its H3, as Chrome and
+ * The Home page folder of Hustle Browser is marked with the [HOME_PAGE_ATTRIBUTE] of its H3, as Chrome and
  * Firefox mark their bookmarks bar with PERSONAL_TOOLBAR_FOLDER; other browsers import it as a plain folder.
  * Reading is lenient, as the files of browsers are not well-formed HTML: tags in any case, DT and P not
  * closed, attributes quoted or not, entities; descriptions (DD), separators and headings other than H3
@@ -19,7 +19,7 @@ object BookmarksHtml {
 
     data class Link(override val title: String, val url: String) : Node()
 
-    const val HOME_PAGE_ATTRIBUTE = "TVBRO_HOME_PAGE"
+    const val HOME_PAGE_ATTRIBUTE = "HUSTLEBROWSER_HOME_PAGE"
 
     private const val INDENT = "    "
 

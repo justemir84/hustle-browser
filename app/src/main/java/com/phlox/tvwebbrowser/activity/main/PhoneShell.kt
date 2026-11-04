@@ -30,7 +30,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.view.ClearDownloadsDialog
 import com.phlox.tvwebbrowser.activity.main.view.PhoneBar
 import com.phlox.tvwebbrowser.activity.main.view.PhoneFindBar
@@ -156,7 +156,7 @@ class PhoneShell(private val host: BrowserShell.Host) : BrowserShell {
         override fun bookmarkPage() {
             activity.lifecycleScope.launch {
                 val page = BookmarksNavigator.PageInfo.of(controller.currentTab.value) ?: return@launch
-                val bookmark = TVBro.container.data.favorites.findByUrl(page.url)
+                val bookmark = HustleBrowser.container.data.favorites.findByUrl(page.url)
                 if (bookmark != null) vb.vBookmarks.showForm(bookmark) else vb.vBookmarks.addPage(page)
             }
         }
@@ -197,7 +197,7 @@ class PhoneShell(private val host: BrowserShell.Host) : BrowserShell {
         vb.vMenuSheet.show()
         val page = BookmarksNavigator.PageInfo.of(controller.currentTab.value) ?: return
         activity.lifecycleScope.launch {
-            vb.vMenuSheet.setBookmarked(TVBro.container.data.favorites.findByUrl(page.url) != null)
+            vb.vMenuSheet.setBookmarked(HustleBrowser.container.data.favorites.findByUrl(page.url) != null)
         }
     }
 
@@ -294,7 +294,7 @@ class PhoneShell(private val host: BrowserShell.Host) : BrowserShell {
 
     private val syncSettings = SyncSettings(activity, AppContext.provideConfig().prefs)
     private val syncDiscovery = SyncDiscovery(activity)
-    private val syncClient = SyncClient(syncSettings, { TVBro.container.data.pairedDevices }, syncDiscovery::find)
+    private val syncClient = SyncClient(syncSettings, { HustleBrowser.container.data.pairedDevices }, syncDiscovery::find)
 
     /** Callbacks waiting for the answer of the user about the local network */
     private var localNetworkCallbacks: MutableList<() -> Unit>? = null
@@ -383,9 +383,9 @@ class PhoneShell(private val host: BrowserShell.Host) : BrowserShell {
         override fun close() = vb.vSync.hide()
     }
 
-    private val syncNavigator = PhoneSyncNavigator(activity, syncClient, TVBro.container.data.pairedDevices,
-        TVBro.container.data.favorites,
-        LocalBookmarks({ TVBro.container.data }, BookmarksBackup(activity.filesDir), activity.getString(R.string.home_page)),
+    private val syncNavigator = PhoneSyncNavigator(activity, syncClient, HustleBrowser.container.data.pairedDevices,
+        HustleBrowser.container.data.favorites,
+        LocalBookmarks({ HustleBrowser.container.data }, BookmarksBackup(activity.filesDir), activity.getString(R.string.home_page)),
         activity.lifecycleScope, syncHost)
 
     /** The link of the QR code of a TV: pairs with it */
@@ -471,7 +471,7 @@ class PhoneShell(private val host: BrowserShell.Host) : BrowserShell {
     }
 
     /** The suggestions of the history above the bar while the address is edited */
-    private val addressSuggestions = AddressSuggestions(TVBro.container.data.history, activity.lifecycleScope,
+    private val addressSuggestions = AddressSuggestions(HustleBrowser.container.data.history, activity.lifecycleScope,
         object : AddressSuggestions.Host {
             override fun render(rows: List<AddressSuggestions.Row>) = vb.vAddressSuggestions.render(rows)
         })

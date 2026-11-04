@@ -22,13 +22,13 @@ class BookmarksHtmlTest {
     }
 
     @Test
-    fun theHomePageFolderIsMarkedForTvBro() {
+    fun theHomePageFolderIsMarkedForHustleBrowser() {
         val html = BookmarksHtml.write(listOf(
             Folder("Home page", listOf(Link("a", "https://a.com/")), isHomePage = true),
             Folder("Other", emptyList())
         ))
         assertTrue(html.startsWith("<!DOCTYPE NETSCAPE-Bookmark-file-1>"))
-        assertTrue(html.contains("<DT><H3 TVBRO_HOME_PAGE=\"true\">Home page</H3>"))
+        assertTrue(html.contains("<DT><H3 HUSTLEBROWSER_HOME_PAGE=\"true\">Home page</H3>"))
         assertTrue(html.contains("<DT><H3>Other</H3>"))
         assertTrue(html.contains("<DT><A HREF=\"https://a.com/\">a</A>"))
     }
@@ -103,7 +103,7 @@ class BookmarksHtmlTest {
 
     @Test
     fun looseHtmlIsReadToo() {
-        val html = "\uFEFF<dl><dt><h3 tvbro_home_page=TRUE>Home \n  page</h3><dl>" +
+        val html = "\uFEFF<dl><dt><h3 hustlebrowser_home_page=TRUE>Home \n  page</h3><dl>" +
             "<dt><a href=https://a.com/>A&#x41;&#66;</a>" +
             "<dt><a href='https://b.com/'>B&nbsp;b" +
             "<dt><a href=\"https://c.com/\"></a>" +

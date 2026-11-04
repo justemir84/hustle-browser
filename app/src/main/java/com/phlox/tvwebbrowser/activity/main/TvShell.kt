@@ -29,7 +29,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.phlox.tvwebbrowser.AppContext
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.R
 import com.phlox.tvwebbrowser.activity.main.view.ActionBar
 import com.phlox.tvwebbrowser.activity.main.view.BookmarksPanelView
@@ -612,11 +612,11 @@ class TvShell(private val host: BrowserShell.Host) : BrowserShell, ActionBar.Cal
     }
 
     /** The bookmarks of the TV that phones change, with the backup of before the last change */
-    private val bookmarks = LocalBookmarks({ TVBro.container.data }, BookmarksBackup(activity.filesDir),
+    private val bookmarks = LocalBookmarks({ HustleBrowser.container.data }, BookmarksBackup(activity.filesDir),
         activity.getString(R.string.home_page))
 
     /** Listens for paired phones while the activity is started */
-    private val syncServer = SyncServer(SyncSettings(activity, AppContext.provideConfig().prefs), { TVBro.container.data },
+    private val syncServer = SyncServer(SyncSettings(activity, AppContext.provideConfig().prefs), { HustleBrowser.container.data },
         bookmarks, object : SyncServer.Host {
             override fun openTabs(from: PairedDevice, tabs: List<SyncTab>) = openTabsFromPhone(from, tabs)
 
@@ -639,7 +639,7 @@ class TvShell(private val host: BrowserShell.Host) : BrowserShell, ActionBar.Cal
         }, discovery = SyncDiscovery(activity))
 
     /** The files phones send go to the downloads */
-    private val phoneFiles = PhoneFileReceiver(activity, host, { TVBro.container.data.downloads }) { message ->
+    private val phoneFiles = PhoneFileReceiver(activity, host, { HustleBrowser.container.data.downloads }) { message ->
         NotificationView.show(vb.rlRoot, R.drawable.ic_phone, message)
     }
 
@@ -682,7 +682,7 @@ class TvShell(private val host: BrowserShell.Host) : BrowserShell, ActionBar.Cal
 
     private val syncScreenCallback = object : TvSyncScreenView.Callback {
         override val pairingLink get() = syncServer.pairingLink
-        override val phones get() = TVBro.container.data.pairedDevices.observe(PairedDevice.KIND_PHONE)
+        override val phones get() = HustleBrowser.container.data.pairedDevices.observe(PairedDevice.KIND_PHONE)
         override val canUndoBookmarks: Boolean get() = bookmarks.canRestore
 
         override fun startPairing() = syncServer.startPairing()
@@ -693,7 +693,7 @@ class TvShell(private val host: BrowserShell.Host) : BrowserShell, ActionBar.Cal
             AlertDialog.Builder(activity)
                 .setMessage(activity.getString(R.string.sync_forget_phone_confirm, phone.name))
                 .setPositiveButton(R.string.sync_forget) { _, _ ->
-                    lifecycleScope.launch { TVBro.container.data.pairedDevices.delete(phone) }
+                    lifecycleScope.launch { HustleBrowser.container.data.pairedDevices.delete(phone) }
                 }
                 .setNegativeButton(R.string.cancel, null)
                 .show()
@@ -755,7 +755,7 @@ class TvShell(private val host: BrowserShell.Host) : BrowserShell, ActionBar.Cal
     override fun openUrl(url: String) = host.navigate(url)
 
     /** The suggestions of the history under the address while it is edited */
-    private val addressSuggestions = AddressSuggestions(TVBro.container.data.history, lifecycleScope,
+    private val addressSuggestions = AddressSuggestions(HustleBrowser.container.data.history, lifecycleScope,
         object : AddressSuggestions.Host {
             override fun render(rows: List<AddressSuggestions.Row>) {
                 if (rows.isNotEmpty()) placeAddressSuggestions()

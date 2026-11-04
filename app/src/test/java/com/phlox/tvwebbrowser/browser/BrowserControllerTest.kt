@@ -2,7 +2,7 @@ package com.phlox.tvwebbrowser.browser
 
 import android.os.Looper
 import androidx.room.Room
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.BrowserTab
 import com.phlox.tvwebbrowser.singleton.AppDatabase
 import kotlinx.coroutines.Job
@@ -21,7 +21,7 @@ import org.robolectric.Shadows.shadowOf
 @RunWith(RobolectricTestRunner::class)
 class BrowserControllerTest {
     private lateinit var db: AppDatabase
-    private val container get() = TVBro.container
+    private val container get() = HustleBrowser.container
 
     @Before
     fun setUp() {

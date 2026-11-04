@@ -12,7 +12,7 @@ import org.json.JSONObject
 /**
  * Element hiding of the ad blocker in a WebView: `element_hiding.js` runs at the start of every document of
  * every frame (DOCUMENT_START_SCRIPT), or else in the main frame when the page starts and when it finishes.
- * It asks the `TVBroHiding` bridge synchronously, so the CSS of the page is there before its elements show.
+ * It asks the `HustleBrowserHiding` bridge synchronously, so the CSS of the page is there before its elements show.
  * WebView runs no such script in frames of about:blank and about:srcdoc: the script of their page hides
  * their elements (with the selectors of that page).
  * The bridge runs on a thread of WebView; [topUrl] gives the page of the tab for frames, whose site setting
@@ -58,7 +58,7 @@ internal class WebViewElementHiding(private val webView: WebView, private val to
     }
 
     companion object {
-        private const val BRIDGE = "TVBroHiding"
+        private const val BRIDGE = "HustleBrowserHiding"
         private var script: String? = null
 
         /** The shared script in a function of its own, started with the bridge */
@@ -67,7 +67,7 @@ internal class WebViewElementHiding(private val webView: WebView, private val to
                 if (!window.$BRIDGE) return;
                 const bridge = window.$BRIDGE;
                 const top = window === window.top;
-                tvBroHideElements({
+                hustleBrowserHideElements({
                     styles: callback => callback(JSON.parse(bridge.styles(location.href, top))),
                     generic: (classes, ids, callback) =>
                         callback(bridge.generic(location.href, top, classes.join(' '), ids.join(' '))),

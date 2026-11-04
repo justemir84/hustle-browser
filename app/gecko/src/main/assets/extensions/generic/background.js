@@ -1,11 +1,11 @@
 // The background script of the extension. It holds each request until the app tells whether it is an ad
 // (AppWebExtensionBackgroundPortDelegate) or the timeout passes.
-console.log("TV Bro background extension loaded");
+console.log("Hustle Browser background extension loaded");
 
 const RESOLVE_TIMEOUT_MS = 1500;
 // The requests waiting for the app, by id: { resolve, started, timer }
 const pending = new Map();
-const tvBroPort = browser.runtime.connectNative("tvbro_bg");
+const hustleBrowserPort = browser.runtime.connectNative("hustlebrowser_bg");
 // Main frames are sent to the app only when its filters may block pages ("config" message)
 let checkPages = false;
 
@@ -19,12 +19,12 @@ function recordAnswer(ms) {
     if (answerTimes.length < STATS_EVERY) return;
     const sorted = answerTimes.sort((a, b) => a - b);
     const at = (p) => sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * p))].toFixed(1);
-    console.log(`TV Bro ad blocking: ${sorted.length} answers in ms p50 ${at(0.5)} p90 ${at(0.9)} ` +
+    console.log(`Hustle Browser ad blocking: ${sorted.length} answers in ms p50 ${at(0.5)} p90 ${at(0.9)} ` +
         `p99 ${at(0.99)} max ${sorted[sorted.length - 1].toFixed(1)}, timeouts so far ${timeouts}`);
     answerTimes = [];
 }
 
-tvBroPort.onMessage.addListener(response => {
+hustleBrowserPort.onMessage.addListener(response => {
     if (response.action === "config") {
         checkPages = !!response.checkPages;
         return;
@@ -59,12 +59,12 @@ browser.webRequest.onBeforeRequest.addListener(
             const timer = setTimeout(() => {
                 if (!pending.delete(id)) return;
                 timeouts++;
-                console.log("TV Bro ad blocking: no answer in time for " + details.url);
+                console.log("Hustle Browser ad blocking: no answer in time for " + details.url);
                 resolve({ cancel: false });
             }, RESOLVE_TIMEOUT_MS);
             pending.set(id, { resolve: resolve, started: performance.now(), timer: timer, tabId: details.tabId,
                 url: details.url });
-            tvBroPort.postMessage({
+            hustleBrowserPort.postMessage({
                 action: "onBeforeRequest",
                 details: {
                     requestId: details.requestId,

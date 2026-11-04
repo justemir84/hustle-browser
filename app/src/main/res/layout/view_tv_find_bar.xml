@@ -28,7 +28,7 @@ the matches and the mic, the previous and next match, and close.
         android:importantForAccessibility="no" />
 
     <EditText
-        style="@style/Widget.TVBro.Text.Address"
+        style="@style/Widget.HustleBrowser.Text.Address"
         android:id="@+id/etQuery"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -49,7 +49,7 @@ the matches and the mic, the previous and next match, and close.
 
     <!-- "3/17" -->
     <TextView
-        style="@style/Widget.TVBro.Text.Address"
+        style="@style/Widget.HustleBrowser.Text.Address"
         android:id="@+id/tvCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,36 +58,36 @@ the matches and the mic, the previous and next match, and close.
         android:accessibilityLiveRegion="polite"
         tools:text="3/17" />
 
-    <View style="@style/Widget.TVBro.FieldDivider" />
+    <View style="@style/Widget.HustleBrowser.FieldDivider" />
 
     <ImageButton
-        style="@style/Widget.TVBro.ImageButton.Ds.Field"
+        style="@style/Widget.HustleBrowser.ImageButton.Ds.Field"
         android:id="@+id/ibVoice"
         android:src="@drawable/ic_voice_search"
         android:contentDescription="@string/voice_search" />
   </com.phlox.tvwebbrowser.activity.main.view.AddressFieldLayout>
 
   <LinearLayout
-      style="@style/Widget.TVBro.ToolbarGroup"
+      style="@style/Widget.HustleBrowser.ToolbarGroup"
       android:layout_height="@dimen/ds_size_chrome_control">
 
     <ImageButton
-        style="@style/Widget.TVBro.ImageButton.Ds.Segment"
+        style="@style/Widget.HustleBrowser.ImageButton.Ds.Segment"
         android:id="@+id/ibPrevious"
         android:src="@drawable/ic_chevron_up"
         android:contentDescription="@string/find_in_page_previous" />
 
-    <View style="@style/Widget.TVBro.ToolbarSeparator" />
+    <View style="@style/Widget.HustleBrowser.ToolbarSeparator" />
 
     <ImageButton
-        style="@style/Widget.TVBro.ImageButton.Ds.Segment"
+        style="@style/Widget.HustleBrowser.ImageButton.Ds.Segment"
         android:id="@+id/ibNext"
         android:src="@drawable/ic_chevron_down"
         android:contentDescription="@string/find_in_page_next" />
   </LinearLayout>
 
   <ImageButton
-      style="@style/Widget.TVBro.ImageButton.Ds.Standalone"
+      style="@style/Widget.HustleBrowser.ImageButton.Ds.Standalone"
       android:id="@+id/ibClose"
       android:layout_marginStart="@dimen/ds_space_gutter"
       android:src="@drawable/ic_close"

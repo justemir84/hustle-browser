@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.lifecycleScope
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.MainActivity
 import com.phlox.tvwebbrowser.model.Download
 import com.phlox.tvwebbrowser.utils.DownloadFileActions
@@ -42,7 +42,7 @@ class ChannelLaunchActivity : ComponentActivity() {
         }
         lifecycleScope.launch {
             val opened = withContext(Dispatchers.IO) {
-                val download = TVBro.container.data.downloads.get(id)
+                val download = HustleBrowser.container.data.downloads.get(id)
                 download != null && download.status == Download.Status.DONE &&
                     DownloadFiles.exists(this@ChannelLaunchActivity, download.filepath) && open(download)
             }

@@ -8,7 +8,7 @@
     android:background="?attr/tbColorDsSurface">
 
   <View
-      style="@style/Widget.TVBro.MenuSeparator"
+      style="@style/Widget.HustleBrowser.MenuSeparator"
       android:id="@+id/vDivider" />
 
   <LinearLayout
@@ -71,14 +71,14 @@
 
       <!-- a chevron on folders, a check on the folder that is chosen -->
       <ImageView
-          style="@style/Widget.TVBro.MenuIcon"
+          style="@style/Widget.HustleBrowser.MenuIcon"
           android:id="@+id/ivEnd"
           android:layout_marginStart="@dimen/ds_phone_menu_row_padding"
           tools:src="@drawable/ic_chevron_right" />
     </LinearLayout>
 
     <ImageButton
-        style="@style/Widget.TVBro.ImageButton.Ds.Phone"
+        style="@style/Widget.HustleBrowser.ImageButton.Ds.Phone"
         android:id="@+id/ibOptions"
         android:layout_marginEnd="@dimen/ds_phone_bar_padding_horizontal"
         android:src="@drawable/ic_more_vert"

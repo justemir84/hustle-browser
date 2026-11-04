@@ -19,7 +19,7 @@ fun <I, O> ComponentActivity.launchForResult(
     onResult: (O) -> Unit
 ) {
     var launcher: ActivityResultLauncher<I>? = null
-    launcher = activityResultRegistry.register("tvbro_result_" + resultKeys.incrementAndGet(), contract) { result ->
+    launcher = activityResultRegistry.register("hustlebrowser_result_" + resultKeys.incrementAndGet(), contract) { result ->
         launcher?.unregister()
         onResult(result)
     }

@@ -4,7 +4,7 @@ import android.net.Uri
 import androidx.room.Room
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.adblock.psl.PublicSuffixList
 import com.phlox.tvwebbrowser.singleton.AppDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -53,7 +53,7 @@ class AppEngineAdBlockerTest {
             service.initialize()
             service.update(force = false)
         }
-        blocker = AppEngineAdBlocker(service, TVBro.container.data.hostConfigs, config)
+        blocker = AppEngineAdBlocker(service, HustleBrowser.container.data.hostConfigs, config)
         config.adBlockEnabled = true
     }
 
@@ -79,7 +79,7 @@ class AppEngineAdBlockerTest {
 
     @Test
     fun theSiteSettingOfTheTabsPageApplies() {
-        runBlocking { TVBro.container.data.hostConfigs.setAdBlock("site.com", false) }
+        runBlocking { HustleBrowser.container.data.hostConfigs.setAdBlock("site.com", false) }
         assertFalse(webView("https://ads.example.net/a.js"))
         //a frame of another site on that page: the page of the tab decides
         assertFalse(gecko("https://ads.example.net/a", "script", document = "https://frame.com/", top = "https://site.com/"))
@@ -110,7 +110,7 @@ class AppEngineAdBlockerTest {
 
     @Test
     fun noHidingWhereAdsAreShown() {
-        runBlocking { TVBro.container.data.hostConfigs.setAdBlock("site.com", false) }
+        runBlocking { HustleBrowser.container.data.hostConfigs.setAdBlock("site.com", false) }
         assertEquals("", blocker.hidingStyles(Uri.parse("https://site.com/"), Uri.parse("https://site.com/")).css)
         assertEquals("", blocker.genericHidingStyles(Uri.parse("https://site.com/"), Uri.parse("https://site.com/"),
             listOf("ad-box"), emptyList()))

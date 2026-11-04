@@ -471,7 +471,7 @@ class BookmarksNavigator(
     private fun countFolders(nodes: List<BookmarksHtml.Node>): Int =
         nodes.sumOf { if (it is BookmarksHtml.Folder) 1 + countFolders(it.children) else 0 }
 
-    /** How many bookmarks and folders the file holds, and whether TV Bro's Home page folder is among them */
+    /** How many bookmarks and folders the file holds, and whether Hustle Browser's Home page folder is among them */
     private fun importSummary(nodes: List<BookmarksHtml.Node>): String {
         val res = context.resources
         val bookmarkCount = countBookmarks(nodes)

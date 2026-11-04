@@ -12,7 +12,7 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
 import com.phlox.tvwebbrowser.AppContext
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.browser.DownloadItem
 import com.phlox.tvwebbrowser.browser.decodeBase64Data
 import com.phlox.tvwebbrowser.browser.toDownload
@@ -45,7 +45,7 @@ class DownloadLauncher(
         private const val TAG = "DownloadLauncher"
     }
 
-    private val service get() = TVBro.container.downloadService
+    private val service get() = HustleBrowser.container.downloadService
 
     /** The service is bound while it is needed, not all the time the activity is started */
     private val need = DownloadServiceNeed { needed -> if (needed) service.acquire() else service.release() }
@@ -187,12 +187,12 @@ class DownloadLauncher(
         //the activity: it is the download now
         service.acquire()
         service.whenConnected {
-            TVBro.container.appScope.launch {
+            HustleBrowser.container.appScope.launch {
                 var sent = false
                 try {
                     //later than the start of the service: its check of the rows left does not take it
                     download.time = System.currentTimeMillis()
-                    download.id = TVBro.container.data.downloads.insert(download)
+                    download.id = HustleBrowser.container.data.downloads.insert(download)
                     val message = command(DownloadCommands.START, download.id).apply {
                         data.putString(DownloadCommands.KEY_COOKIES, download.cookies)
                         data.putString(DownloadCommands.KEY_REFERER, referer)
@@ -232,7 +232,7 @@ class DownloadLauncher(
      */
     private fun pipe(input: InputStream): ParcelFileDescriptor {
         val (readEnd, writeEnd) = ParcelFileDescriptor.createReliablePipe()
-        TVBro.container.appScope.launch(Dispatchers.IO) {
+        HustleBrowser.container.appScope.launch(Dispatchers.IO) {
             try {
                 input.use { ParcelFileDescriptor.AutoCloseOutputStream(writeEnd).use { output -> input.copyTo(output, 64 * 1024) } }
             } catch (e: IOException) {

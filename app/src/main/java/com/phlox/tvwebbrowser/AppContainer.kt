@@ -31,7 +31,7 @@ class AppContainer(context: Context) {
     /** Engine states and thumbnails of tabs */
     val tabFiles = TabFilesStore(context.filesDir, context.cacheDir)
 
-    /** The ad blocker of the browser processes (started by TVBro; never in the process of downloads) */
+    /** The ad blocker of the browser processes (started by HustleBrowser; never in the process of downloads) */
     val adBlock by lazy {
         AdBlockService(File(appContext.filesDir, "adblock"), appScope, AppContext.provideConfig(), {
             PublicSuffixList.load(appContext.assets.open("adblock/psl.txt").use { it.readBytes() })

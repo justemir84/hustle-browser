@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.BookmarksNavigator
 import com.phlox.tvwebbrowser.activity.main.BookmarksNavigator.Row
 import com.phlox.tvwebbrowser.activity.main.BookmarksNavigator.Screen
@@ -165,7 +165,7 @@ class PhoneBookmarksView @JvmOverloads constructor(
         this.scope = scope
         this.sheet = sheet
         this.callback = callback
-        navigator = BookmarksNavigator(context, TVBro.container.data.favorites, callback.bookmarkFiles, scope, object : BookmarksNavigator.Host {
+        navigator = BookmarksNavigator(context, HustleBrowser.container.data.favorites, callback.bookmarkFiles, scope, object : BookmarksNavigator.Host {
             override fun currentPage() = callback.currentPage()
 
             override fun render(screen: Screen, focus: BookmarksNavigator.Focus) = this@PhoneBookmarksView.render(screen, focus)

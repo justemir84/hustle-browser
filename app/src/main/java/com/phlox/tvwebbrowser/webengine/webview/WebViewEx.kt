@@ -74,7 +74,7 @@ import java.util.UUID
 open class WebViewEx(context: Context, val callback: Callback, val jsInterface: AndroidJSInterface) : WebView(context) {
     companion object {
         val TAG = WebViewEx::class.java.simpleName
-        const val WEB_VIEW_TAG = "TV Bro WebView"
+        const val WEB_VIEW_TAG = "Hustle Browser WebView"
         const val INTERNAL_SCHEME = "internal://"
         const val INTERNAL_SCHEME_WARNING_DOMAIN = "warning"
         const val INTERNAL_SCHEME_WARNING_DOMAIN_TYPE_CERT = "certificate"
@@ -569,7 +569,7 @@ open class WebViewEx(context: Context, val callback: Callback, val jsInterface: 
             }
         }
 
-        addJavascriptInterface(jsInterface, "TVBro")
+        addJavascriptInterface(jsInterface, "HustleBrowser")
     }
 
     override fun restoreState(inState: Bundle): WebBackForwardList? {

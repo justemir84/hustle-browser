@@ -15,7 +15,7 @@ import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
-/** Alert dialogs get the design system look from ThemeOverlay.TVBro.Dialog.Alert, in the day and the night themes */
+/** Alert dialogs get the design system look from ThemeOverlay.HustleBrowser.Dialog.Alert, in the day and the night themes */
 @RunWith(RobolectricTestRunner::class)
 class DialogThemeTest {
     private val activity: AppCompatActivity = Robolectric.buildActivity(AppCompatActivity::class.java)
@@ -27,7 +27,7 @@ class DialogThemeTest {
         val dialog = AlertDialog.Builder(activity).setMessage("Message").create()
         assertEquals(R.drawable.ds_dialog_bg, resourceOf(dialog.context, android.R.attr.windowBackground))
         assertEquals(R.drawable.ds_menu_row_bg, resourceOf(dialog.context, androidx.appcompat.R.attr.listChoiceBackgroundIndicator))
-        assertEquals(R.style.Widget_TVBro_DialogButton,
+        assertEquals(R.style.Widget_HustleBrowser_DialogButton,
             resourceOf(dialog.context, androidx.appcompat.R.attr.buttonBarPositiveButtonStyle))
     }
 

@@ -18,7 +18,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "tv-bro"
+rootProject.name = "hustle-browser"
 include(":app")
 include(":app:common")
 include(":app:gecko")

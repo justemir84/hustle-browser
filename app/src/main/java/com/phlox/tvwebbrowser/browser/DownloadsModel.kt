@@ -1,6 +1,6 @@
 package com.phlox.tvwebbrowser.browser
 
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.Download
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -136,7 +136,7 @@ class DownloadsModel : ActiveModel() {
 
     init {
         modelScope.launch {
-            TVBro.container.data.downloads.observeAll().collect { rows ->
+            HustleBrowser.container.data.downloads.observeAll().collect { rows ->
                 val (items, events) = tracker.track(rows, System.currentTimeMillis())
                 _downloads.value = items
                 _activeCount.value = items.count { it.isActive }

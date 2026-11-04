@@ -13,7 +13,7 @@ import android.provider.OpenableColumns
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.data.BookmarksHtml
 import com.phlox.tvwebbrowser.model.Download
 import com.phlox.tvwebbrowser.utils.launchForResult
@@ -49,7 +49,7 @@ class DeviceBookmarkFiles(private val activity: ComponentActivity) : BookmarksNa
                 } else {
                     saveToDirectory(name, bytes)
                 } ?: return@withContext null
-                TVBro.container.data.downloads.insert(Download().apply {
+                HustleBrowser.container.data.downloads.insert(Download().apply {
                     filename = savedName
                     filepath = path
                     time = System.currentTimeMillis()

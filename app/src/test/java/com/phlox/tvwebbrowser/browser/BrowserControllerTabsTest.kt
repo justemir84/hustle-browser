@@ -4,7 +4,7 @@ import android.os.Looper
 import androidx.room.Room
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.BrowserTab
 import com.phlox.tvwebbrowser.singleton.AppDatabase
 import com.phlox.tvwebbrowser.webengine.WebEngineFactory
@@ -44,7 +44,7 @@ class BrowserControllerTabsTest {
     @After
     fun tearDown() {
         //tabs are saved in the background, let them finish before the database is closed
-        val container = TVBro.container
+        val container = HustleBrowser.container
         val job = container.appScope.launch { container.tabWrites.awaitPending() }
         while (!job.isCompleted) {
             shadowOf(Looper.getMainLooper()).idle()
@@ -62,7 +62,7 @@ class BrowserControllerTabsTest {
     private val current get() = controller.currentTab.value
 
     private fun awaitWrites() {
-        val container = TVBro.container
+        val container = HustleBrowser.container
         val job = container.appScope.launch { container.tabWrites.awaitPending() }
         while (!job.isCompleted) {
             shadowOf(Looper.getMainLooper()).idle()

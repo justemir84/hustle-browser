@@ -143,7 +143,7 @@ class SyncChannel private constructor(
 
         private class Keys(key: ByteArray, pairingId: String?, clientNonce: ByteArray, serverNonce: ByteArray) {
             private val salt = clientNonce + serverNonce
-            private val context = "tvbro-sync $PROTOCOL ${pairingId ?: "qr"}"
+            private val context = "hustlebrowser-sync $PROTOCOL ${pairingId ?: "qr"}"
             val toServer = SyncCrypto.hkdf(key, salt, "$context c2s")
             val toClient = SyncCrypto.hkdf(key, salt, "$context s2c")
         }

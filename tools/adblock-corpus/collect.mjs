@@ -47,7 +47,7 @@ function readSites() {
 async function launchChrome() {
     const chrome = CHROME_PATHS.find((p) => existsSync(p));
     if (!chrome) throw new Error('Chrome not found, set CHROME');
-    const profile = mkdtempSync(join(tmpdir(), 'tvbro-corpus-'));
+    const profile = mkdtempSync(join(tmpdir(), 'hustle-corpus-'));
     const proc = spawn(chrome, [
         '--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`,
         '--no-first-run', '--no-default-browser-check', '--mute-audio', '--window-size=1920,1080',

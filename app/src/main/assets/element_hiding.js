@@ -7,15 +7,15 @@
 //     page hides their elements itself (their documents are of its origin, ads like to use them).
 // The CSS goes into one <style> element at once; the classes and ids of the elements that appear are collected
 // by a MutationObserver and asked for in batches (each name once), up to a limit, for heavy pages on weak TVs.
-function tvBroHideElements(api, doc) {
+function hustleBrowserHideElements(api, doc) {
     doc = doc || document;
-    if (doc.tvBroHidingStarted) return;
-    doc.tvBroHidingStarted = true;
+    if (doc.hustleBrowserHidingStarted) return;
+    doc.hustleBrowserHidingStarted = true;
 
     const MAX_NAMES = 20000;
     const BATCH_DELAY_MS = 50;
     const style = doc.createElement('style');
-    style.setAttribute('data-tvbro-hiding', '');
+    style.setAttribute('data-hustlebrowser-hiding', '');
 
     // the head may not exist yet at the start of the document, and pages may remove the element
     function attach() {
@@ -31,8 +31,8 @@ function tvBroHideElements(api, doc) {
 
     // a frame of about:blank or about:srcdoc gets its document when it loads (an empty one before)
     function watchFrame(frame) {
-        if (!api.frames || frame.tvBroHidingWatched) return;
-        frame.tvBroHidingWatched = true;
+        if (!api.frames || frame.hustleBrowserHidingWatched) return;
+        frame.hustleBrowserHidingWatched = true;
         const start = () => {
             let frameDocument = null;
             try {
@@ -40,7 +40,7 @@ function tvBroHideElements(api, doc) {
             } catch (e) {
                 // another origin: the engine runs the script there itself
             }
-            if (frameDocument && frameDocument.URL.startsWith('about:')) tvBroHideElements(api, frameDocument);
+            if (frameDocument && frameDocument.URL.startsWith('about:')) hustleBrowserHideElements(api, frameDocument);
         };
         frame.addEventListener('load', start);
         start();

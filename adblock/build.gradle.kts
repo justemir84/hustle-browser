@@ -1,5 +1,5 @@
 plugins {
-    id("tvbro.android.library")
+    id("hustlebrowser.android.library")
 }
 
 // The ad blocker: filter lists of the Adblock Plus syntax (EasyList), compiled into a compact engine.

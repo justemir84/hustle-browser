@@ -35,7 +35,7 @@ the tracks (under the anchor at the top end).
       tools:visibility="visible">
 
     <TextView
-        style="@style/Widget.TVBro.Text.Toast"
+        style="@style/Widget.HustleBrowser.Text.Toast"
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@ the tracks (under the anchor at the top end).
         tools:text="Big Buck Bunny" />
 
     <TextView
-        style="@style/Widget.TVBro.Text.Caption"
+        style="@style/Widget.HustleBrowser.Text.Caption"
         android:id="@+id/tvCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,7 +87,7 @@ the tracks (under the anchor at the top end).
       tools:visibility="visible">
 
     <TextView
-        style="@style/Widget.TVBro.Text.MenuItem"
+        style="@style/Widget.HustleBrowser.Text.MenuItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
@@ -95,7 +95,7 @@ the tracks (under the anchor at the top end).
         android:text="@string/player_error" />
 
     <TextView
-        style="@style/Widget.TVBro.Text.MenuCaption"
+        style="@style/Widget.HustleBrowser.Text.MenuCaption"
         android:id="@+id/tvError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,12 +110,12 @@ the tracks (under the anchor at the top end).
         android:orientation="horizontal">
 
       <TextView
-          style="@style/Widget.TVBro.TextButton.Ds"
+          style="@style/Widget.HustleBrowser.TextButton.Ds"
           android:id="@+id/btnOtherApp"
           android:text="@string/open_in_external_application" />
 
       <TextView
-          style="@style/Widget.TVBro.TextButton.Ds"
+          style="@style/Widget.HustleBrowser.TextButton.Ds"
           android:id="@+id/btnBack"
           android:layout_marginStart="@dimen/ds_space_icon_text"
           android:text="@string/player_back_to_page" />

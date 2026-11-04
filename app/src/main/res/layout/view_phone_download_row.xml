@@ -28,7 +28,7 @@ for a download in progress, else the button of its options.
       android:longClickable="true">
 
     <ImageView
-        style="@style/Widget.TVBro.DownloadIcon.Phone"
+        style="@style/Widget.HustleBrowser.DownloadIcon.Phone"
         android:id="@+id/ivIcon"
         tools:src="@drawable/ic_app" />
 
@@ -50,7 +50,7 @@ for a download in progress, else the button of its options.
           android:textColor="?attr/tbColorDsInk"
           android:singleLine="true"
           android:ellipsize="middle"
-          tools:text="tvbro-2.4.0-arm64-v8a.apk" />
+          tools:text="hustle-browser-3.0.4-arm64-v8a.apk" />
 
       <TextView
           android:id="@+id/tvCaption"
@@ -63,26 +63,26 @@ for a download in progress, else the button of its options.
           tools:text="29.1 of 48.2 MB · 8 s left" />
 
       <ProgressBar
-          style="@style/Widget.TVBro.DownloadProgress"
+          style="@style/Widget.HustleBrowser.DownloadProgress"
           android:id="@+id/pbProgress"
           tools:progress="600" />
     </LinearLayout>
   </LinearLayout>
 
   <ImageButton
-      style="@style/Widget.TVBro.ImageButton.Ds.Phone"
+      style="@style/Widget.HustleBrowser.ImageButton.Ds.Phone"
       android:id="@+id/ibFirst"
       tools:src="@drawable/ic_pause" />
 
   <ImageButton
-      style="@style/Widget.TVBro.ImageButton.Ds.Phone"
+      style="@style/Widget.HustleBrowser.ImageButton.Ds.Phone"
       android:id="@+id/ibSecond"
       tools:src="@drawable/ic_close" />
 
   <ImageButton
-      style="@style/Widget.TVBro.ImageButton.Ds.Phone"
+      style="@style/Widget.HustleBrowser.ImageButton.Ds.Phone"
       android:id="@+id/ibOptions"
       android:layout_marginEnd="@dimen/ds_phone_bar_padding_horizontal"
       android:src="@drawable/ic_more_vert"
-      tools:contentDescription="Options of tvbro-2.4.0-arm64-v8a.apk" />
+      tools:contentDescription="Options of hustle-browser-3.0.4-arm64-v8a.apk" />
 </LinearLayout>

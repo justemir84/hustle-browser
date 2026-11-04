@@ -3,9 +3,9 @@
 // other apps can play (page_videos.js), and hides the elements of ads (element_hiding.js); the build copies
 // them here, they run before this script.
 
-const communicatePort = browser.runtime.connectNative("tvbro_content");
+const communicatePort = browser.runtime.connectNative("hustlebrowser_content");
 const send = message => communicatePort.postMessage(message);
-const mediaCommand = tvBroWatchMedia(send);
+const mediaCommand = hustleBrowserWatchMedia(send);
 
 // The element hiding asks the app over the port; the answers come back by the id of the request
 const hidingCallbacks = new Map();
@@ -31,13 +31,13 @@ communicatePort.onMessage.addListener(message => {
     if (message.command) mediaCommand(message.command);
 });
 
-tvBroHideElements({
+hustleBrowserHideElements({
     styles: callback => askHiding({ hidingStyles: location.href }, reply => callback(reply)),
     generic: (classes, ids, callback) =>
         askHiding({ genericHiding: location.href, classes: classes, ids: ids }, reply => callback(reply.css))
 });
 
-tvBroWatchPageVideos(send);
+hustleBrowserWatchPageVideos(send);
 
 // The background script tells the top frame of the tab what it blocked, for the count of the site panel
 browser.runtime.onMessage.addListener(message => {

@@ -1,6 +1,6 @@
 //download blobs support
-if (!window.tvBroClicksListener) {
-    window.tvBroClicksListener = function(e) {
+if (!window.hustleBrowserClicksListener) {
+    window.hustleBrowserClicksListener = function(e) {
         if (e.target.tagName.toUpperCase() == "A" && e.target.attributes.href.value.toLowerCase().startsWith("blob:")) {
             var fileName = e.target.download;
             var url = e.target.attributes.href.value;
@@ -14,7 +14,7 @@ if (!window.tvBroClicksListener) {
                     reader.readAsDataURL(blob);
                     reader.onloadend = function() {
                         base64data = reader.result;
-                        TVBro.takeBlobDownloadData(base64data, fileName, url, blob.type);
+                        HustleBrowser.takeBlobDownloadData(base64data, fileName, url, blob.type);
                     }
                 }
             };
@@ -23,16 +23,16 @@ if (!window.tvBroClicksListener) {
             e.preventDefault();
         }
     };
-    document.addEventListener("click", window.tvBroClicksListener);
+    document.addEventListener("click", window.hustleBrowserClicksListener);
 }
 
 // context menu support
 window.addEventListener("touchstart", function(e) {
-    window.TVBRO_activeElement = e.target;
-    window.TVBRO_touchStartX = e.touches[0].clientX;
-    window.TVBRO_touchStartY = e.touches[0].clientY;
+    window.HUSTLEBROWSER_activeElement = e.target;
+    window.HUSTLEBROWSER_touchStartX = e.touches[0].clientX;
+    window.HUSTLEBROWSER_touchStartY = e.touches[0].clientY;
 });
 // the virtual cursor is a mouse for pages in the desktop view: its long press touches nothing
 window.addEventListener("mousemove", function(e) {
-    window.TVBRO_activeElement = e.target;
+    window.HUSTLEBROWSER_activeElement = e.target;
 }, {capture: true, passive: true});

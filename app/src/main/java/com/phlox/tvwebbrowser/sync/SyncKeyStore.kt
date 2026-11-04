@@ -45,7 +45,7 @@ class PlainSyncKeyStore : SyncKeyStore {
 private class AndroidSyncKeyStore : SyncKeyStore {
     companion object {
         private const val TAG = "SyncKeyStore"
-        private const val ALIAS = "tvbro_sync_pairings"
+        private const val ALIAS = "hustlebrowser_sync_pairings"
         private const val PROVIDER = "AndroidKeyStore"
         private const val TRANSFORMATION = "AES/GCM/NoPadding"
         private const val IV_SIZE = 12

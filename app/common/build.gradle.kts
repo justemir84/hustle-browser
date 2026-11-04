@@ -1,5 +1,5 @@
 plugins {
-    id("tvbro.android.library")
+    id("hustlebrowser.android.library")
     alias(libs.plugins.ksp)
 }
 

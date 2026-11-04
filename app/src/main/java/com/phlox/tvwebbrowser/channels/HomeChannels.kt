@@ -9,7 +9,7 @@ import android.util.Log
 import androidx.annotation.VisibleForTesting
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -164,7 +164,7 @@ object HomeChannels {
     }
 
     private fun defaultSources(context: Context): Map<ChannelKind, ChannelSource> {
-        val container = TVBro.container
+        val container = HustleBrowser.container
         val data = container.data
         val config = AppContext.provideConfig()
         val favicons = CachedFavicons(data.hostConfigs)

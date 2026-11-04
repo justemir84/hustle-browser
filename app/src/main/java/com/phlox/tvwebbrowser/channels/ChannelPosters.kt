@@ -139,7 +139,7 @@ object ChannelPosters {
         canvas.drawColor(TILE_COLORS[(colorSeed.hashCode() and Int.MAX_VALUE) % TILE_COLORS.size])
         val captionHeight = WIDE_HEIGHT * 0.34f
         //the icons tint themselves with theme attributes
-        val drawable = AppCompatResources.getDrawable(ContextThemeWrapper(context, R.style.Theme_TVBro), icon)?.mutate()
+        val drawable = AppCompatResources.getDrawable(ContextThemeWrapper(context, R.style.Theme_HustleBrowser), icon)?.mutate()
         if (drawable != null) {
             drawable.setTint(Color.WHITE)
             val side = (WIDE_HEIGHT * 0.36f).toInt()

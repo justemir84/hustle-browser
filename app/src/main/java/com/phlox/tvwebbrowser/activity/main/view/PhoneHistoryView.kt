@@ -14,7 +14,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.HistoryNavigator
 import com.phlox.tvwebbrowser.activity.main.HistoryNavigator.Screen
 import com.phlox.tvwebbrowser.databinding.ViewPhoneDownloadsSectionBinding
@@ -103,7 +103,7 @@ class PhoneHistoryView @JvmOverloads constructor(
         this.scope = scope
         this.sheet = sheet
         this.callback = callback
-        navigator = HistoryNavigator(context, TVBro.container.data.history, scope, object : HistoryNavigator.Host {
+        navigator = HistoryNavigator(context, HustleBrowser.container.data.history, scope, object : HistoryNavigator.Host {
             override fun render(screen: Screen, focus: HistoryNavigator.Focus?) = this@PhoneHistoryView.render(screen, focus)
 
             override fun open(url: String) {

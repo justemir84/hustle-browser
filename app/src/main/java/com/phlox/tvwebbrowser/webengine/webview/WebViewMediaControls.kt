@@ -110,7 +110,7 @@ internal class WebViewMediaControls(private val webView: WebView, private val on
         if (frame != null) {
             frame.postMessage(command)
         } else {
-            webView.evaluateJavascript("window.tvBroMediaCommand && tvBroMediaCommand('$command')", null)
+            webView.evaluateJavascript("window.hustleBrowserMediaCommand && hustleBrowserMediaCommand('$command')", null)
         }
     }
 
@@ -135,7 +135,7 @@ internal class WebViewMediaControls(private val webView: WebView, private val on
     companion object {
         private const val TAG = "WebViewMediaControls"
         /** The object the script finds in every frame */
-        private const val CHANNEL = "tvBroMedia"
+        private const val CHANNEL = "hustleBrowserMedia"
         private var script: String? = null
 
         /** The shared scripts first: webview_media.js starts them */

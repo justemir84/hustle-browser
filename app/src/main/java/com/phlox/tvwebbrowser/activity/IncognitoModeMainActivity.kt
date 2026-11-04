@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.MainActivity
 
 //Same as MainActivity but runs in separate process
@@ -24,7 +24,7 @@ class IncognitoModeMainActivity: MainActivity() {
 
     override fun onDestroy() {
         if (isFinishing) {
-            TVBro.exitProcessAfterMainActivityFinish()
+            HustleBrowser.exitProcessAfterMainActivityFinish()
         }
         super.onDestroy()
     }

@@ -1,10 +1,10 @@
 // The media keys of the remote and the video mode (MediaFrames.kt), for both engines: WebView runs it in every
 // frame (webview_media.js starts it), GeckoView in the content script of its extension (the build copies it
-// there). tvBroWatchMedia(send) reports the state of the media of the frame that the commands go to as a JSON
+// there). hustleBrowserWatchMedia(send) reports the state of the media of the frame that the commands go to as a JSON
 // string to send ({media: false} when it has none) and returns the function that runs a command; the app sends
 // each command to the frame that shows a video in fullscreen, else to the one that plays. Without send (old
 // WebViews: the main frame only) it reports nothing and only runs commands.
-function tvBroWatchMedia(send) {
+function hustleBrowserWatchMedia(send) {
     var lastPlayed = null;
     var lastState = '';
 

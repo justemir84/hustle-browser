@@ -18,7 +18,7 @@ class Config(val prefs: SharedPreferences, private val credentialsPrefs: SharedP
         const val DEFAULT_SITE_VIEW_KEY = "default_desktop_view"
         const val USER_AGENT_KEY = "user_agent"
         /** In the User-Agents of old versions, which should not be kept */
-        private const val LEGACY_USER_AGENT_PREFIX = "TV Bro/1.0 "
+        private const val LEGACY_USER_AGENT_PREFIX = "Hustle Browser/1.0 "
         const val THEME_KEY = "theme"
         const val INTERFACE_MODE_KEY = "interface_mode"
         const val LAST_UPDATE_USER_NOTIFICATION_TIME_KEY = "last_update_notif"

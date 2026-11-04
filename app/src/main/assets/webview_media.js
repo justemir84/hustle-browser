@@ -1,14 +1,14 @@
 // WebView: starts the scripts of the frame (media_controls.js, page_videos.js, run before this one) with the
-// tvBroMedia object the app adds to every frame (WebViewMediaControls). Without that object (old WebViews) it
-// runs in the main frame only, and the app calls tvBroMediaCommand itself.
+// hustleBrowserMedia object the app adds to every frame (WebViewMediaControls). Without that object (old WebViews) it
+// runs in the main frame only, and the app calls hustleBrowserMediaCommand itself.
 (function() {
-    if (window.tvBroMediaCommand) return;
-    var channel = window.tvBroMedia;
+    if (window.hustleBrowserMediaCommand) return;
+    var channel = window.hustleBrowserMedia;
     var send = channel ? function(message) { channel.postMessage(message); } : null;
-    window.tvBroMediaCommand = tvBroWatchMedia(send);
+    window.hustleBrowserMediaCommand = hustleBrowserWatchMedia(send);
     if (!channel) return;
     channel.onmessage = function(e) {
-        window.tvBroMediaCommand(e.data);
+        window.hustleBrowserMediaCommand(e.data);
     };
-    tvBroWatchPageVideos(send);
+    hustleBrowserWatchPageVideos(send);
 })();

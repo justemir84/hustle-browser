@@ -2,7 +2,7 @@ package com.phlox.tvwebbrowser.browser
 
 import androidx.room.Room
 import com.phlox.tvwebbrowser.AppContext
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.Config
 import com.phlox.tvwebbrowser.model.HostConfig
 import com.phlox.tvwebbrowser.model.BrowserTab
@@ -45,11 +45,11 @@ class TabPoliciesTest {
 
     /** Also loads the config, as the controller does when a page of the host starts loading */
     private fun setPopupBlockLevel(host: String, level: Int) = runBlocking {
-        TVBro.container.data.hostConfigs.setPopupBlockLevel(host, level)
+        HustleBrowser.container.data.hostConfigs.setPopupBlockLevel(host, level)
     }
 
     private fun setAdBlock(host: String, adblock: Boolean?) = runBlocking {
-        TVBro.container.data.hostConfigs.setAdBlock(host, adblock)
+        HustleBrowser.container.data.hostConfigs.setAdBlock(host, adblock)
     }
 
     @Test

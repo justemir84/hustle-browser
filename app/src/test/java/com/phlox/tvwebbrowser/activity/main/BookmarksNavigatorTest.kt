@@ -347,7 +347,7 @@ class BookmarksNavigatorTest {
         navigator.start()
         navigator.export()
         val (name, html) = files.saved.entries.single()
-        assertTrue(name.matches(Regex("""tvbro-bookmarks-\d{4}-\d{2}-\d{2}\.html""")))
+        assertTrue(name.matches(Regex("""hustle-browser-bookmarks-\d{4}-\d{2}-\d{2}\.html""")))
         assertEquals(listOf("Bookmarks saved to Downloads: $name"), messages)
         assertEquals(listOf(
             BookmarksHtml.Folder("Home page", listOf(BookmarksHtml.Link("tile", "https://tile.com/")), isHomePage = true),

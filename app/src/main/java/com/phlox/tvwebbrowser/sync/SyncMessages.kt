@@ -95,7 +95,7 @@ object SyncRequests {
     const val MAX_FILE_NAME_BYTES = 200
     const val FILE_CHUNK = 128 * 1024
     /** The scheme of the url of a download that came from a phone (it is not downloaded again) */
-    private const val PHONE_FILE_SCHEME = "tvbro-phone:"
+    private const val PHONE_FILE_SCHEME = "hustlebrowser-phone:"
 
     /** Error codes of requests (besides those of [SyncChannel]) */
     const val UNSUPPORTED = "unsupported"

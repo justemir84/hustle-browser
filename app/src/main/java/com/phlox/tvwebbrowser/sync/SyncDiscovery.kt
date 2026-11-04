@@ -15,8 +15,8 @@ import java.net.InetSocketAddress
 class SyncDiscovery(context: Context) {
     companion object {
         private const val TAG = "SyncDiscovery"
-        const val SERVICE_TYPE = "_tvbro._tcp."
-        private const val NAME_PREFIX = "tvbro-"
+        const val SERVICE_TYPE = "_hustlebrowser._tcp."
+        private const val NAME_PREFIX = "hustlebrowser-"
         private const val FIND_TIMEOUT = 8_000L
     }
 

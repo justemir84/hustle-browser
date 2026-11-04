@@ -7,7 +7,7 @@ import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 
 /**
- * The color of a theme attribute (a color token of `Theme.TVBro`, see `attrs.xml`).
+ * The color of a theme attribute (a color token of `Theme.HustleBrowser`, see `attrs.xml`).
  */
 @ColorInt
 fun Context.themeColor(@AttrRes attr: Int): Int {

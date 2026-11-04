@@ -72,7 +72,7 @@ data class WebEngineProvider(
 
 /**
  * The web engine of the app. Each variant of the app has one engine, which registers itself here
- * (see `TVBro.initWebEngineStuff`).
+ * (see `HustleBrowser.initWebEngineStuff`).
  */
 object WebEngineFactory {
     const val TAG = "WebEngineFactory"

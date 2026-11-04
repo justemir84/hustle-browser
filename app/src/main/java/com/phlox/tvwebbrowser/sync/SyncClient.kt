@@ -31,7 +31,7 @@ class SyncClient(
         private const val READ_TIMEOUT = 60_000
         private const val HANDSHAKE_TIMEOUT = 5_000
 
-        /** The TV is not where it was and was not found: not on, TV Bro not open, or in another network */
+        /** The TV is not where it was and was not found: not on, Hustle Browser not open, or in another network */
         const val UNREACHABLE = "unreachable"
     }
 

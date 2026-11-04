@@ -28,7 +28,7 @@ import com.phlox.tvwebbrowser.activity.main.SettingsNavigator.Section
  * of them and some have text fields, so each row keeps its view (by [Row.id]) while it is shown, and the
  * focus stays on it when the page changes around it. On TV ([touch] false) the sections follow each other
  * under their titles inside the card of the screen; on the phone each section is a card of its own.
- * The views get their sizes from the theme (ThemeOverlay.TVBro.Settings.Phone on the phone).
+ * The views get their sizes from the theme (ThemeOverlay.HustleBrowser.Settings.Phone on the phone).
  */
 class SettingsRowsView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null

@@ -47,10 +47,10 @@ class WebViewLoadErrorsTest {
 
     @Test
     fun replaceScriptWritesThePageAsAStringLiteral() {
-        val page = "<p class=\"a\">It's\nhere</p><script>window.TVBRO_errorPage = true;</script>"
+        val page = "<p class=\"a\">It's\nhere</p><script>window.HUSTLEBROWSER_errorPage = true;</script>"
         val script = WebViewLoadErrors.replaceDocumentScript(page)
         assertTrue(script.startsWith("(function(){document.open();document.write(\""))
         assertTrue(script.contains("<p class=\\\"a\\\">It's\\nhere<\\/p>"))
-        assertTrue(script.endsWith("return window.TVBRO_errorPage === true;})()"))
+        assertTrue(script.endsWith("return window.HUSTLEBROWSER_errorPage === true;})()"))
     }
 }

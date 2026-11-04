@@ -39,7 +39,7 @@ class MediaFrames<F : Any> {
             ?: frames.entries.maxByOrNull { it.value.changedAt }
 }
 
-/** The commands of media_controls.js (see tvBroWatchMedia) */
+/** The commands of media_controls.js (see hustleBrowserWatchMedia) */
 enum class MediaCommand(val js: String) {
     TOGGLE("toggle"), PAUSE("pause"), STOP("stop"), REWIND("rewind"), FAST_FORWARD("forward");
 

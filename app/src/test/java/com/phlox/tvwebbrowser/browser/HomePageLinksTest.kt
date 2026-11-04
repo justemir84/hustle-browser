@@ -3,7 +3,7 @@ package com.phlox.tvwebbrowser.browser
 import androidx.room.Room
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.FavoriteItem
 import com.phlox.tvwebbrowser.model.HistoryItem
 import com.phlox.tvwebbrowser.singleton.AppDatabase
@@ -30,7 +30,7 @@ class HomePageLinksTest {
         db = Room.inMemoryDatabaseBuilder(RuntimeEnvironment.getApplication(), AppDatabase::class.java)
             .allowMainThreadQueries().build()
         AppDatabase.setInstanceForTests(db)
-        links = HomePageLinks(config, TVBro.container.data.history, TVBro.container.data.favorites)
+        links = HomePageLinks(config, HustleBrowser.container.data.history, HustleBrowser.container.data.favorites)
     }
 
     @After

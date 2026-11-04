@@ -5,7 +5,7 @@ import android.os.Looper
 import androidx.room.Room
 import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.model.BrowserTab
 import com.phlox.tvwebbrowser.model.HostConfig
 import com.phlox.tvwebbrowser.singleton.AppDatabase
@@ -76,7 +76,7 @@ class BrowserControllerEventsTest {
     @After
     fun tearDown() {
         eventsScope.cancel()
-        val container = TVBro.container
+        val container = HustleBrowser.container
         val job = container.appScope.launch { container.tabWrites.awaitPending() }
         while (!job.isCompleted) {
             shadowOf(Looper.getMainLooper()).idle()
@@ -414,7 +414,7 @@ class BrowserControllerEventsTest {
     fun blankAndLegacyUserAgentsAreAuto() {
         config.userAgent = "  "
         assertNull(config.userAgent)
-        config.prefs.edit().putString(Config.USER_AGENT_KEY, "TV Bro/1.0 Mozilla/5.0").commit()
+        config.prefs.edit().putString(Config.USER_AGENT_KEY, "Hustle Browser/1.0 Mozilla/5.0").commit()
         assertNull(config.userAgent)
         config.userAgent = null
     }

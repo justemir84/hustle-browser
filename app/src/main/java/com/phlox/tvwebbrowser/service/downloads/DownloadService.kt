@@ -23,7 +23,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import androidx.core.os.BundleCompat
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.MainActivity
 import com.phlox.tvwebbrowser.channels.ChannelKind
 import com.phlox.tvwebbrowser.channels.HomeChannels
@@ -57,7 +57,7 @@ class DownloadService : Service() {
         private const val IDLE_STOP_DELAY = 1000L
     }
 
-    private val repository get() = TVBro.container.data.downloads
+    private val repository get() = HustleBrowser.container.data.downloads
     private val scope = MainScope()
     private val executor = Executors.newCachedThreadPool()
     private val handler = Handler(Looper.getMainLooper())
@@ -335,7 +335,7 @@ class DownloadService : Service() {
             getString(R.string.downloaded_of, Formatter.formatShortFileSize(this, downloaded),
                 Formatter.formatShortFileSize(this, total))
         }
-        val builder = notificationBuilder ?: NotificationCompat.Builder(this, TVBro.CHANNEL_ID_DOWNLOADS)
+        val builder = notificationBuilder ?: NotificationCompat.Builder(this, HustleBrowser.CHANNEL_ID_DOWNLOADS)
             .setOngoing(true)
             .setOnlyAlertOnce(true)
             .setSmallIcon(R.mipmap.ic_launcher)

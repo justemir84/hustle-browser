@@ -11,7 +11,7 @@ import com.phlox.tvwebbrowser.AppContext
 import com.phlox.tvwebbrowser.BuildConfig
 import com.phlox.tvwebbrowser.Config
 import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.TVBro
+import com.phlox.tvwebbrowser.HustleBrowser
 import com.phlox.tvwebbrowser.activity.main.dialogs.ShortcutKeyDialog
 import com.phlox.tvwebbrowser.browser.BrowserController
 import com.phlox.tvwebbrowser.browser.ProxySetup
@@ -61,7 +61,7 @@ class AppSettingsStore(
     }
 
     private val config = AppContext.provideConfig()
-    private val adblock = TVBro.container.adBlock
+    private val adblock = HustleBrowser.container.adBlock
     private val autoUpdate = ActiveModelsRepository.get(AutoUpdateModel::class, activity)
     private val shortcuts = ShortcutMgr.getInstance(activity)
 
@@ -78,7 +78,7 @@ class AppSettingsStore(
     override fun setHomePage(mode: Config.HomePageMode, customUrl: String?, linksMode: Config.HomePageLinksMode) {
         settingsModel.setHomePageProperties(mode, customUrl, linksMode)
         //the home page shows the links of the new mode
-        TVBro.container.appScope.launch { controller.homePageLinks.load() }
+        HustleBrowser.container.appScope.launch { controller.homePageLinks.load() }
     }
 
     override val supportsHomeChannels: Boolean get() = HomeChannels.isSupported(activity)
@@ -98,7 +98,7 @@ class AppSettingsStore(
     }
 
     override suspend fun bookmarkFolders(): List<SettingsNavigator.BookmarkFolder> {
-        val favorites = TVBro.container.data.favorites
+        val favorites = HustleBrowser.container.data.favorites
         val result = ArrayList<SettingsNavigator.BookmarkFolder>()
         val visited = HashSet<Long>()
         suspend fun walk(folder: Long, path: String?) {
@@ -133,8 +133,8 @@ class AppSettingsStore(
      */
     private fun applyChannel(kind: ChannelKind, enabled: Boolean) {
         val context = activity.applicationContext
-        TVBro.container.appScope.launch {
-            TVBro.container.tabWrites.awaitPending()
+        HustleBrowser.container.appScope.launch {
+            HustleBrowser.container.tabWrites.awaitPending()
             val channelId = HomeChannels.sync(context, listOf(kind))[kind] ?: return@launch
             if (!enabled) return@launch
             //the system lets the first channel of an app by itself, a moment after it is created
@@ -282,7 +282,7 @@ class AppSettingsStore(
      * with it (an address with a port), so that it is applied once
      */
     private fun applyProxy() {
-        TVBro.container.appScope.launch(Dispatchers.Main) { ProxySetup.apply(config, controller) }
+        HustleBrowser.container.appScope.launch(Dispatchers.Main) { ProxySetup.apply(config, controller) }
     }
 
     override val versionName: String get() = BuildConfig.VERSION_NAME
@@ -380,7 +380,7 @@ class SettingsShellCallback(
     }
 
     override fun restart() {
-        TVBro.exitProcessAfterMainActivityFinish(restartMainActivity = true)
+        HustleBrowser.exitProcessAfterMainActivityFinish(restartMainActivity = true)
         activity.finish()
     }
 }

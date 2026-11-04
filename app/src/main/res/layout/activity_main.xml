@@ -89,7 +89,7 @@
             android:layout_marginEnd="20dp"
             tools:ignore="ContentDescription" />
         <TextView
-            style="@style/Widget.TVBro.Text.Headline"
+            style="@style/Widget.HustleBrowser.Text.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/open_a_new_tab_here" />
@@ -116,7 +116,7 @@
             app:tint="?attr/tbColorDsIcon"
             tools:ignore="ContentDescription" />
         <TextView
-            style="@style/Widget.TVBro.Text.TabTitle"
+            style="@style/Widget.HustleBrowser.Text.TabTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/ds_tab_hint_icon_text"

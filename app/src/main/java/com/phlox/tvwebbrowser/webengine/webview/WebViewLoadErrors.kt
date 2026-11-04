@@ -31,5 +31,5 @@ object WebViewLoadErrors {
     /** A script that puts [page] in the place of the document; it gives `true` if the scripts of [page] ran */
     fun replaceDocumentScript(page: String): String =
         "(function(){document.open();document.write(${JSONObject.quote(page)});document.close();" +
-                "return window.TVBRO_errorPage === true;})()"
+                "return window.HUSTLEBROWSER_errorPage === true;})()"
 }
