@@ -322,7 +322,7 @@
     <string name="settings_check_for_updates">Check for updates</string>
     <string name="check">Check</string>
     <string name="update">Update</string>
-    <string name="settings_up_to_date">You're up to date</string>
+    <string name="settings_up_to_date">You\'re up to date</string>
     <string name="web_browser_optimized_for_tvs">Web browser optimized for TVs</string>
     <string name="warning">Warning</string>
     <string name="err_webview_can_not_link">Cannot link to the WebView component. Try to install the Android System WebView component first.</string>

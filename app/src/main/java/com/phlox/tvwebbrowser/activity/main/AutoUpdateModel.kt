@@ -38,7 +38,7 @@ class AutoUpdateModel: ActiveModel() {
         if (updateChecker.versionCheckResult == null || force) {
             launch(Dispatchers.IO) {
                 try {
-                    updateChecker.check("https://raw.githubusercontent.com/justemir84/hustle-browser/master/latest_version.json",
+                    updateChecker.check("https://raw.githubusercontent.com/justemir84/hustle-browser/main/latest_version.json",
                         arrayOf(config.updateChannel))
                 } catch (e: Exception) {
                     e.printStackTrace()
