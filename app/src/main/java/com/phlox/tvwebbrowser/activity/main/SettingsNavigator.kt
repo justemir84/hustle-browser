@@ -52,7 +52,7 @@ class SettingsNavigator(
         CURSOR_SPEED, CURSOR_ACCELERATION, JOYSTICK, SHORTCUT,
         CLEAR_CACHE, ENGINE_DEBUG, DOWNLOAD_FOLDER, PROXY, PROXY_TYPE, PROXY_HOST, PROXY_PORT, PROXY_USERNAME, PROXY_PASSWORD,
         INFO, UPDATE, AUTO_UPDATE, UPDATE_CHANNEL, CHECK_UPDATE,
-        LINK_SOURCE, LINK_SUPPORT, LINK_LICENSE, LINK_PRIVACY, LINK_PUBLIC_SUFFIX_LIST
+        LINK_SOURCE, LINK_LICENSE, LINK_PRIVACY, LINK_PUBLIC_SUFFIX_LIST
     }
 
     /** The values that are read when the app starts: changing one needs a restart */
@@ -295,7 +295,6 @@ class SettingsNavigator(
 
     companion object {
         const val URL_SOURCE = "https://github.com/justemir84/hustle-browser"
-        const val URL_SUPPORT_AUTHOR = "https://donatello.to/truefedex"
         const val URL_LICENSE = "https://raw.githubusercontent.com/justemir84/hustle-browser/refs/heads/main/LICENSE.md"
         const val URL_PRIVACY_POLICY = "https://raw.githubusercontent.com/justemir84/hustle-browser/refs/heads/main/PRIVACY.md"
         /** The data of the ad blocker (MPL-2.0, which asks to tell where its source is) */
@@ -1028,7 +1027,6 @@ class SettingsNavigator(
         }
         sections += Section(string(R.string.settings_group_links), listOf(
             Row.Link(Key.LINK_SOURCE, string(R.string.settings_source_code), URL_SOURCE),
-            Row.Link(Key.LINK_SUPPORT, string(R.string.settings_support_author), URL_SUPPORT_AUTHOR),
             Row.Link(Key.LINK_LICENSE, string(R.string.settings_license), URL_LICENSE),
             Row.Link(Key.LINK_PRIVACY, string(R.string.settings_privacy_policy), URL_PRIVACY_POLICY),
             Row.Link(Key.LINK_PUBLIC_SUFFIX_LIST, string(R.string.settings_public_suffix_list), URL_PUBLIC_SUFFIX_LIST)
