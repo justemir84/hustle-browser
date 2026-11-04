@@ -296,8 +296,8 @@ class SettingsNavigator(
     companion object {
         const val URL_SOURCE = "https://github.com/justemir84/hustle-browser"
         const val URL_SUPPORT_AUTHOR = "https://donatello.to/truefedex"
-        const val URL_LICENSE = "https://raw.githubusercontent.com/justemir84/hustle-browser/refs/heads/master/LICENSE.md"
-        const val URL_PRIVACY_POLICY = "https://raw.githubusercontent.com/justemir84/hustle-browser/refs/heads/master/PRIVACY.md"
+        const val URL_LICENSE = "https://raw.githubusercontent.com/justemir84/hustle-browser/refs/heads/main/LICENSE.md"
+        const val URL_PRIVACY_POLICY = "https://raw.githubusercontent.com/justemir84/hustle-browser/refs/heads/main/PRIVACY.md"
         /** The data of the ad blocker (MPL-2.0, which asks to tell where its source is) */
         const val URL_PUBLIC_SUFFIX_LIST = "https://publicsuffix.org/"
 
