@@ -1,4 +1,4 @@
-# TV Bro
+# HUSTLE Browser
 
 Simple web browser optimized to use with TV remote
 
@@ -12,5 +12,4 @@ Features:
 - browsing history
 - shortcuts
 
-Discussion pages:
-- https://forum.xda-developers.com/android/apps-games/tv-bro-browser-android-based-tvs-t3545295
+
