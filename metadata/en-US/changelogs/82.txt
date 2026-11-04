@@ -1,0 +1,1 @@
+﻿* Fix the in-app update check (feed URL) and the release build\n* Hustle Browser rebranding
