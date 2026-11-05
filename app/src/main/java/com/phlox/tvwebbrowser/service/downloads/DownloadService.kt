@@ -338,7 +338,7 @@ class DownloadService : Service() {
         val builder = notificationBuilder ?: NotificationCompat.Builder(this, HustleBrowser.CHANNEL_ID_DOWNLOADS)
             .setOngoing(true)
             .setOnlyAlertOnce(true)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentIntent(PendingIntent.getActivity(this, 0,
                 Intent(this, MainActivity::class.java)
                     .putExtra(MainActivity.KEY_SHOW_DOWNLOADS, true)

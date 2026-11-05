@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hustle Browser - notification small icon (white silhouette, Android requires alpha-only white shapes) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF" android:pathData="M24,28 L24,80 L44,80 L44,54 L64,54 L64,80 L84,80 L84,28 Z"/>
+</vector>
