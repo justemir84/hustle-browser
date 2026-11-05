@@ -1,0 +1,2 @@
+﻿* Phone to TV sync: QR link points to the fork's sync page; App Links open Hustle Browser directly
+* Fix download notification icon
