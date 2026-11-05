@@ -1,5 +1,8 @@
+﻿* Fix crash when opening the tabs page (launcher icon recursion)
+* Home page uses the Hustle Browser logo
+* Settings: removed the support-the-author link
 * Hustle Browser rebranding: new app name and app icon, texts updated everywhere
-* Turkish (Türkçe) user interface
+* Turkish (Turkce) user interface
 * Fixed the built-in update check (feed URL), release signing and the release workflow
 * APK assets are now named hustle-browser-<version>-*.apk
 * Major redesign

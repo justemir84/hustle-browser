@@ -2,40 +2,45 @@
   "channels": [
     {
       "name": "release",
-      "latestVersionName": "v3.1.0",
-      "latestVersionCode": 83,
+      "latestVersionName": "v3.1.1",
+      "latestVersionCode": 84,
       "minAPI": 24,
-      "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoExcluded.apk",
+      "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoExcluded.apk",
       "variants": {
         "geckoIncluded": {
           "minAPI": 26,
-          "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoIncluded-armeabi-v7a.apk",
+          "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoIncluded-armeabi-v7a.apk",
           "urls": [
-            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoIncluded-arm64-v8a.apk",
-            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoIncluded-x86_64.apk"
+            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoIncluded-arm64-v8a.apk",
+            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoIncluded-x86_64.apk"
           ]
         }
       }
     },
     {
       "name": "beta",
-      "latestVersionName": "v3.1.0",
-      "latestVersionCode": 83,
+      "latestVersionName": "v3.1.1",
+      "latestVersionCode": 84,
       "minAPI": 24,
-      "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoExcluded.apk",
+      "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoExcluded.apk",
       "variants": {
         "geckoIncluded": {
           "minAPI": 26,
-          "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoIncluded-armeabi-v7a.apk",
+          "url": "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoIncluded-armeabi-v7a.apk",
           "urls": [
-            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoIncluded-arm64-v8a.apk",
-            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.0/hustle-browser-3.1.0-generic-geckoIncluded-x86_64.apk"
+            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoIncluded-arm64-v8a.apk",
+            "https://github.com/justemir84/hustle-browser/releases/download/v3.1.1/hustle-browser-3.1.1-generic-geckoIncluded-x86_64.apk"
           ]
         }
       }
     }
   ],
   "changelog": [
+    {
+      "versionCode": 84,
+      "versionName": "v3.1.1",
+      "changes": "* Fix crash when opening the tabs page (launcher icon recursion)\n* Home page uses the Hustle Browser logo\n* Settings: removed the support-the-author link"
+    },
     {
       "versionCode": 83,
       "versionName": "v3.1.0",

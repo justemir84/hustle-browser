@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId = "com.phlox.tvwebbrowser"
-        versionCode = 83
-        versionName = "3.1.0"
+        versionCode = 84
+        versionName = "3.1.1"
     }
 
     signingConfigs {

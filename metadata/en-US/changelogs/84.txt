@@ -1,0 +1,3 @@
+﻿* Fix crash when opening the tabs page (launcher icon recursion)
+* Home page uses the Hustle Browser logo
+* Settings: removed the support-the-author link
