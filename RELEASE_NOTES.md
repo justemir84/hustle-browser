@@ -1,4 +1,5 @@
-﻿* Fix crash when opening the tabs page (launcher icon recursion)
+﻿* Phone to TV sync: QR link points to the fork's own sync page, so App Links open Hustle Browser directly
+* Fix crash when opening the tabs page (launcher icon recursion)
 * Home page uses the Hustle Browser logo
 * Settings: removed the support-the-author link
 * Hustle Browser rebranding: new app name and app icon, texts updated everywhere
